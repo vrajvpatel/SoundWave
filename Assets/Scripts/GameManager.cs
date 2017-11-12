@@ -16,6 +16,13 @@ public class Settings {
 	}
 }
 
+public class Scores {
+	public int currentScore;
+	public string currentSongName;
+	List<string> songNames = new List<string>();
+	Dictionary<string,int> songScores = new Dictionary<string, int>();
+}
+
 /// <summary>
 /// Used to store settings, scores, and read / write
 /// </summary>
@@ -24,7 +31,9 @@ public class GameManager : MonoBehaviour {
 	const string SETTINGSPATH = "Assets/settings.dat";
 	const string SCORESPATH = "Assets/scores.dat";
 	private Settings gameSettings;
-	Dictionary<string,int> Scores = new Dictionary<string, int>();
+	public Settings SETTINGS { get {return gameSettings; }}
+	private Scores gameScores;
+	public Scores SCORE { get { return gameScores; }}
 	private static GameManager instance;
 	public GameManager Instance { get { return instance; }}
 
